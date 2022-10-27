@@ -338,7 +338,7 @@ function grade(numberGrade){
   [60, 'you got an F'],
   ]
 
-  for (i = 0; i < 5; i++){
+  for (let i = 0; i < 5; i++){
     if (numberGrade < scale[i][0] && numberGrade >= [i + 1][0]){
       letterGrade = scale [i][1];
     }
