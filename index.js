@@ -362,14 +362,14 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(anyText) {
-  const vowels = [a,e,i,o,u,A,E,I,O,U];
-  let TextArray = [anyText];
-  //if (anyText )
-  console.log(anyText);
+// function vowelCounter(anyText) {
+//   const vowels = [a,e,i,o,u,A,E,I,O,U];
+//   let TextArray = [anyText];
+//   //if (anyText )
+//   console.log(anyText);
 
-}
-console.log(vowelCounter('hello'));
+// }
+// console.log(vowelCounter('hello'));
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
