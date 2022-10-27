@@ -304,12 +304,16 @@ Using the annoyingSong function below do the following:
 */
 let startingNumber = 4
 
+function annoyingSong(j){
+  return `${j} bottles of soda on the wall, ${j} bottles of soda, take one down pass it around ${j - 1} bottles of soda on the wall`;
+}
+
 for (let i = startingNumber; i > 1 ; i = i - 1){
-function annoyingSong(i){
-  return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;
+    annoyingSong(i);
+    console.log(annoyingSong(i));
 }
-console.log(annoyingSong(i));
-}
+
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
