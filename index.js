@@ -20,7 +20,12 @@ Do the following:
    HINT: no function required
 */
 
-
+let votingAge = 18;
+if (votingAge >= 18){
+  console.log(true);
+}else {
+  console.log(false);
+}
 
 /*
 Task 1b - Values (not auto tested)
@@ -34,9 +39,13 @@ Do the following:
    HINT: no function required
 */
 
+let firstThing = 2;
+let secondThing = 2;
 
-
-
+if (firstThing === secondThing) {
+  firstThing++;
+}
+console.log(firstThing);
 
 /*
 Task 1c - Convert Strings to Numbers (not auto tested)
@@ -49,8 +58,11 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-
+{
+let a = '1999';
+let b = a*1;
+console.log(b);
+}
 
 /*
 Task 1d - Multiply
@@ -65,6 +77,11 @@ function multiply(num1, num2){
   return num1 * num2;
 }
 
+{
+let a = 5;
+let b = 3;
+console.log(multiply(a,b));
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -77,11 +94,10 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age*7;
 }
-
-
+console.log(dogYears(5));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -129,10 +145,47 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight,age){
+  let pounds = 0;
+  let alt;
+  if (age >= 1){
+    //console.log('Adult Dog');
+    if (weight <= 5){
+     pounds = weight*.05
+    }else if(weight > 5 && weight <= 10) {
+      pounds = weight*.04
+    }else if(weight > 10 && weight <= 15) {
+      pounds = weight*.03
+    }else if(weight > 15 && weight <= 200) {
+      pounds = weight*.02
+    }else{
+      console.log('this is not a dog.')
+      pounds = 0;
+    }
+  }else if (age > 0 && age < 1){
+    //console.log('Puppy!');
+    if (age > 0/12 && age < 2/12){
+      console.log("nurse this puppy.");
+    }else if(age >= 2/12 && age < 4/12){
+      pounds = weight*.1
+     }else if(age >= 4/12 && age < 7/12) {
+       pounds = weight*.05
+     }else if(age >= 7/12 && age < 12/12) {
+       pounds = weight*.04
+     }else{
+       console.log('this is not a puppy.')
+     }
+  }else{
+    console.log('ErrorBud');
+  }
+  if (pounds !== 0){
+  //return `Please feed your dog ${pounds} pounds of dog food.`;
+    return pounds;
+}else{
+    return "error";
+  }
 }
-
+console.log(hungryDog(15,1))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -156,10 +209,50 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 
-function game(user, computer){
-  /*add your code here*/
-}
+let rand = Math.floor(Math.random()*3);
+let computer;
+  if (rand === 0){
+    computer = "rock";
+  }else if (rand === 1){
+    computer = "paper";
+  }else if (rand === 2){
+    computer = "scissors";
+  }else{
+    return "error";
+  }
+//console.log(computer);
 
+function game(user, computer){
+  
+  let userNumber;
+
+  if (user === "rock"){
+    userNumber = 0;
+  }else if (user === "paper"){
+    userNumber = 1;
+  }else if (user === "scissors"){
+    userNumber = 2;
+  }else{
+    return "please input a valid choice.";
+  }
+
+  const Logic = [
+    [1,0],
+    [2,1],
+    [0,2]
+  ];
+
+if (computer === user){
+    return "it's a tie";
+}
+for (let i = 0; i <= 2; i++ ) {
+    if (Logic [i][0] === userNumber && Logic [i][1] === rand){
+      return "you win!";
+    }
+}
+return "you lose!";
+}
+console.log(game("rock",computer));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -169,13 +262,15 @@ function game(user, computer){
 /*
 Using the miles function below do the following:
 1. Receive a number of kilometers
-2. Convert the number of kiolmeters received to miles
+2. Convert the number of kilometers received to miles
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(km){
+  const mi = km * .621371;
+  return mi;
 }
+//console.log(miles(2));
 
 
 
@@ -187,10 +282,11 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  const ft = cm * .0328084;
+  return ft;
 }
-
+//console.log(feet(2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -206,11 +302,14 @@ Using the annoyingSong function below do the following:
 3. Outside of the function, Make a loop that invokes annoying song with a number that decreases until it gets to 1 bottle left. 
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
+let startingNumber = 4
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+for (let i = startingNumber; i > 1 ; i = i - 1){
+function annoyingSong(i){
+  return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;
 }
-
+console.log(annoyingSong(i));
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -227,10 +326,27 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
-}
+function grade(numberGrade){
+  
+  let letterGrade;
+  
+  const scale = [
+  [100.001, 'you got an A'],
+  [90, 'you got a B'],
+  [80, 'you got a C'],
+  [70, 'you got a D'],
+  [60, 'you got an F'],
+  ]
 
+  for (i = 0; i < 5; i++){
+    if (numberGrade < scale[i][0] && numberGrade >= [i + 1][0]){
+      letterGrade = scale [i][1];
+    }
+  }
+
+  return letterGrade;
+}
+console.log(grade(2));
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -246,10 +362,14 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
-}
+function vowelCounter(anyText) {
+  const vowels = [a,e,i,o,u,A,E,I,O,U];
+  let TextArray = [anyText];
+  //if (anyText )
+  console.log(anyText);
 
+}
+console.log(vowelCounter('hello'));
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
