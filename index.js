@@ -208,51 +208,42 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
-
-let rand = Math.floor(Math.random()*3);
-let computer;
-  if (rand === 0){
+//Computer choice:
+let computer = Math.random();
+  if (computer <= 1/3){
     computer = "rock";
-  }else if (rand === 1){
+  }else if (computer <= 2/3){
     computer = "paper";
-  }else if (rand === 2){
+  }else if (computer > 2/3){
     computer = "scissors";
-  }else{
-    console.log("error");
   }
-//console.log(computer);
 
 function game(user, computer){
-  
-  let userNumber;
-
-  if (user === "rock"){
-    userNumber = 0;
-  }else if (user === "paper"){
-    userNumber = 1;
-  }else if (user === "scissors"){
-    userNumber = 2;
-  }else{
-    console.log("please input a valid choice.");
-  }
-
   const Logic = [
-    [1,0],
-    [2,1],
-    [0,2]
+    ['rock','scissors'],
+    ['paper','rock'],
+    ['scissors','paper']
   ];
-
-if (computer === user){
-    return "it's a tie";
-}
-for (let i = 0; i <= 2; i++ ) {
-    if (Logic [i][0] === userNumber && Logic [i][1] === rand){
-      return "you win!";
+  //checks for valid input
+  for (let i = 0; i <= 2; i++ ) {
+    if (Logic [i][0] === user){
+      
+      //Start of logic
+      if (user === computer){
+        return "it's a tie";
+        }
+      for (let i = 0; i <= 2; i++ ) {
+        if (Logic [i][0] === user && Logic [i][1] === computer){
+          return "you win!";
+        }
+      }
+      return "you lose!";
     }
-}
-return "you lose!";
-}
-console.log(game("rock",computer));
+  }
+  return "please input 'rock', 'paper', or 'scissors'."
+} 
+ 
+console.log(game("paper",computer));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -283,10 +274,10 @@ Using the feet function below do the following:
 */
 
 function feet(cm){
-  const ft = cm * .0328084;
+  const ft = cm / 30.48;
   return ft;
 }
-//console.log(feet(2));
+console.log(feet(160));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
