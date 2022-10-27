@@ -218,7 +218,7 @@ let computer;
   }else if (rand === 2){
     computer = "scissors";
   }else{
-    return "error";
+    console.log("error");
   }
 //console.log(computer);
 
@@ -233,7 +233,7 @@ function game(user, computer){
   }else if (user === "scissors"){
     userNumber = 2;
   }else{
-    return "please input a valid choice.";
+    console.log("please input a valid choice.");
   }
 
   const Logic = [
